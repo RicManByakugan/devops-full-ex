@@ -21,9 +21,11 @@ export class ItemsComponent {
   }
 
   loadItems() {
-    this.itemService.getItems().subscribe(data => {
-      this.items = data.data;
+    console.log("Log Items");
+    this.itemService.getItems().subscribe(res => {
+      this.items = res;
     });
+    console.log(this.items);
   }
 
   addItem() {

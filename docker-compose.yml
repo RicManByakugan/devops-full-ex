@@ -14,9 +14,13 @@ services:
       MONGODB_URI: mongodb://mongo:27017/mydatabase
     depends_on:
       - mongo
+    volumes:
+      - ./backend:/app
 
   frontend:
     build:
       context: ./frontend
     ports:
       - "80:80"
+    volumes:
+      - ./frontend:/app

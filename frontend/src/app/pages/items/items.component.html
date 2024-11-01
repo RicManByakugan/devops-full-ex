@@ -1,8 +1,7 @@
 <div style="display: flex; gap: 20px;">
-    <!-- Section de gauche : Affichage des éléments -->
     <div style="flex: 1; border: 1px solid #ddd; padding: 20px;">
         <h2>Liste des éléments</h2>
-        <ul>
+        <ul *ngIf="items">
             <li *ngFor="let item of items">
                 <strong>{{ item.name }}</strong><br />
                 <small>{{ item.description }}</small>
@@ -10,7 +9,6 @@
         </ul>
     </div>
 
-    <!-- Section de droite : Formulaire d'ajout d'un nouvel élément -->
     <div style="flex: 1; border: 1px solid #ddd; padding: 20px;">
         <h2>Ajouter un élément</h2>
         <form (ngSubmit)="addItem()">
