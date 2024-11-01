@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ItemService } from '../../services/item.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-items',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './items.component.html',
   styleUrl: './items.component.css'
 })

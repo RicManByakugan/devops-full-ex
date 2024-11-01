@@ -1,1 +1,28 @@
-<p>items works!</p>
+<div style="display: flex; gap: 20px;">
+    <!-- Section de gauche : Affichage des éléments -->
+    <div style="flex: 1; border: 1px solid #ddd; padding: 20px;">
+        <h2>Liste des éléments</h2>
+        <ul>
+            <li *ngFor="let item of items">
+                <strong>{{ item.name }}</strong><br />
+                <small>{{ item.description }}</small>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Section de droite : Formulaire d'ajout d'un nouvel élément -->
+    <div style="flex: 1; border: 1px solid #ddd; padding: 20px;">
+        <h2>Ajouter un élément</h2>
+        <form (ngSubmit)="addItem()">
+            <div style="margin-bottom: 15px;">
+                <label for="name">Nom :</label><br />
+                <input type="text" id="name" [(ngModel)]="newItem.name" name="name" required />
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="description">Description :</label><br />
+                <input type="text" id="description" [(ngModel)]="newItem.description" name="description" required />
+            </div>
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+</div>
