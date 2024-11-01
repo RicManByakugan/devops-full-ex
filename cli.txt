@@ -1,3 +1,7 @@
-npx create-next-app backend
+npm i -g @nestjs/cli
+
+nest new backend
 cd backend
+
+npm install @nestjs/mongoose mongoose
 
